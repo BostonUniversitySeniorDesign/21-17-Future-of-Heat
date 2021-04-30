@@ -64,6 +64,8 @@ Below is a snippet of the write and read code that are implemented in the index.
 
 When 'Click to Start' button is pressed all values in the database are reset to zero.
 
+    const database = firebase.database();
+    const rootRef = database.ref();
     startBtn.addEventListener('click', (e) => {
         e.preventDefault();
         rootRef.child("electric_homes").set(0);
@@ -90,3 +92,7 @@ When 'Enter' button is pressed all values in the database are updated according 
         rootRef.child("active").set(1);
 
     });
+
+Essentially, the .ref() method gets you to the root of the database, and calling .child() creates a child key.
+
+The very useful method is .on(): calling .on() on the database reference pointing to the .child('object'). EventType allows you to control the level of synchronization from the realtime databse. "value" is an EventType. In "value" EventType, the callback function will be invoked whenever the data at the ref is changed.
