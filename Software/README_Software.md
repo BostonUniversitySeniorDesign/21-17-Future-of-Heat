@@ -27,23 +27,23 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
     2.  After setting up your new project, it will display all the initialization code you need to get started, for example :
 
         
-`<script> // Your web app's Firebase configuration
-   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-   var firebaseConfig = {
-       apiKey: "AIzaSyCtjVPCkMEUtS4fd6zuc91DjEeeXi2ncL0",
-       authDomain: "test-future-of-heat.firebaseapp.com"
-       databaseURL: "https://test-future-of-heat-default-rtdb.firebaseio.com",
-       projectId: "test-future-of-heat",
-       storageBucket: "test-future-of-heat.appspot.com",
-       messagingSenderId: "1019447598625",
-       appId: "1:1019447598625:web:c3299f5ea4e0d20dd34d60",
-       measurementId: "G-9ZXX8F0T40"
-   };
+        `<script> // Your web app's Firebase configuration
+           // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+           var firebaseConfig = {
+               apiKey: "AIzaSyCtjVPCkMEUtS4fd6zuc91DjEeeXi2ncL0",
+               authDomain: "test-future-of-heat.firebaseapp.com"
+               databaseURL: "https://test-future-of-heat-default-rtdb.firebaseio.com",
+               projectId: "test-future-of-heat",
+               storageBucket: "test-future-of-heat.appspot.com",
+               messagingSenderId: "1019447598625",
+               appId: "1:1019447598625:web:c3299f5ea4e0d20dd34d60",
+               measurementId: "G-9ZXX8F0T40"
+           };
 
-   // Initialize Firebase
-   firebase.initializeApp(firebaseConfig);
-   firebase.analytics();
-</script>`
+           // Initialize Firebase
+           firebase.initializeApp(firebaseConfig);
+           firebase.analytics();
+        </script>`
 
 
     3.  Enable Firestore under console => Database
