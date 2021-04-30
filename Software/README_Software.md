@@ -94,3 +94,5 @@ When 'Enter' button is pressed all values in the database are updated according 
     });
 
 Essentially, the .ref() method gets you to the root of the database, and calling .child() creates a child key.
+
+More information on how to initialize and work with Firbase for a web application can be found in [Firbase Documentation](https://firebase.google.com/docs/web/setup)
