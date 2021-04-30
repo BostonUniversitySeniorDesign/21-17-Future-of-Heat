@@ -22,9 +22,9 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
 
 
 ### Setup and configure Firebase
-Create an account at https://firebase.google.com/
+    1.  Create an account at https://firebase.google.com/
 
-    * After setting up your new project, it will display all the initialization code you need to get started, for example :
+    2.  After setting up your new project, it will display all the initialization code you need to get started, for example :
 
         
         <script>// Your web app's Firebase configuration
@@ -43,6 +43,6 @@ Create an account at https://firebase.google.com/
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();</script>
 
-    * Enable Firestore under console => Database
-    * Set database permissions to enable read/write access for all users
+    3.  Enable Firestore under console => Database
+    4.  Set database permissions to enable read/write access for all users
 
