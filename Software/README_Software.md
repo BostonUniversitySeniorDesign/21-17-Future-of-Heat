@@ -20,7 +20,7 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
     * homes
     * weather
 
-Functions in indesx.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range from the 
+Functions in index.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range from the 
 
 ### Setup and configure Firebase
     1.  Create an account at https://firebase.google.com/
@@ -57,5 +57,6 @@ Functions in indesx.js calculate the number of electric homes and electric vehic
           },
         }
 
-The /database.rules.json is a copy of the Firebase Realtime Database rules. The web application uses plain javascript to wirte and read data from our dev-database.
+The /database.rules.json is a copy of the Firebase Realtime Database rules.
+The web application uses plain javascript to wirte and read data from our dev-database.
 Below is a snippet of the write and read code that are implemented in the index.js file when the  
