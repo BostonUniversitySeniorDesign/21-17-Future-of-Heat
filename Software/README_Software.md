@@ -23,10 +23,11 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
 
 ### Setup and configure Firebase
 Create an account at https://firebase.google.com/
+
     * After setting up your new project, it will display all the initialization code you need to get started, for example :
 
-    
-        '<script>// Your web app's Firebase configuration
+        
+        <script>// Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
             apiKey: "AIzaSyCtjVPCkMEUtS4fd6zuc91DjEeeXi2ncL0",
@@ -40,7 +41,7 @@ Create an account at https://firebase.google.com/
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        firebase.analytics();</script>''
+        firebase.analytics();</script>
 
     * Enable Firestore under console => Database
     * Set database permissions to enable read/write access for all users
