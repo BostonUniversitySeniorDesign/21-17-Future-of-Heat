@@ -12,7 +12,7 @@ The web application is the user interface resonsible for the interaction between
 
 ## Installation
 
- We used [Google's Firbase](https://firebase.google.com) to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
+We used [Google's Firbase](https://firebase.google.com) to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
 using the [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). The Firebase database is structured as a JSON tree with four main parents:
 
     * electric_homes
@@ -20,6 +20,7 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
     * homes
     * weather
 
+Functions in indesx.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range from the 
 
 ### Setup and configure Firebase
     1.  Create an account at https://firebase.google.com/
@@ -27,7 +28,7 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
     2.  After setting up your new project, it will display all the initialization code you need to get started, for example :
 
         
-        `<script> // Your web app's Firebase configuration
+        <script> // Your web app's Firebase configuration
            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
            var firebaseConfig = {
                apiKey: "AIzaSyCtjVPCkMEUtS4fd6zuc91DjEeeXi2ncL0",
@@ -43,9 +44,18 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
            // Initialize Firebase
            firebase.initializeApp(firebaseConfig);
            firebase.analytics();
-        </script>`
+        </script>
 
 
     3.  Enable Firestore under console => Database
     4.  Set database permissions to enable read/write access for all users
 
+        {
+          "rules": {
+            ".read": true,
+            ".write": true,
+          },
+        }
+
+The /database.rules.json is a copy of the Firebase Realtime Database rules. The web application uses plain javascript to wirte and read data from our dev-database.
+Below is a snippet of the write and read code that are implemented in the index.js file when the  
