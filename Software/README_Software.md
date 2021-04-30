@@ -60,4 +60,33 @@ Functions in index.js calculate the number of electric homes and electric vehicl
 The /database.rules.json is a copy of the Firebase Realtime Database rules.
 
 The web application uses plain javascript to wirte and read data from our dev-database.
-Below is a snippet of the write and read code that are implemented in the index.js file when the  
+Below is a snippet of the write and read code that are implemented in the index.js file when the 'Click to Start' and 'Enter' buttons are clicked:
+
+When 'Click to Start' button is pressed all values in the database are reset to zero.
+
+    startBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        rootRef.child("electric_homes").set(0);
+        rootRef.child("electric_vehicles").set(0);
+        rootRef.child("weather").set(0);
+        
+    
+        for(i = 0; i < 12 ; i++) {
+            var num = i + 1;
+            var n = num.toString();
+             var starCountRef = firebase.database().ref('homes/Load-' + n);
+              starCountRef.set(0);
+          }
+
+    });
+
+When 'Enter' button is pressed all values in the database are updated according to the users selection.
+
+    enterBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        rootRef.child("electric_homes").set(homeValue(home.value));
+        rootRef.child("electric_vehicles").set(vehiclesValue(vehicles.value));
+        rootRef.child("weather").set(weatherValue(weather.value));
+        rootRef.child("active").set(1);
+
+    });
