@@ -58,5 +58,6 @@ Functions in index.js calculate the number of electric homes and electric vehicl
         }
 
 The /database.rules.json is a copy of the Firebase Realtime Database rules.
+
 The web application uses plain javascript to wirte and read data from our dev-database.
 Below is a snippet of the write and read code that are implemented in the index.js file when the  
