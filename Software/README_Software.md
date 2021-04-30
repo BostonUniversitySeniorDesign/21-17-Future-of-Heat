@@ -94,5 +94,3 @@ When 'Enter' button is pressed all values in the database are updated according 
     });
 
 Essentially, the .ref() method gets you to the root of the database, and calling .child() creates a child key.
-
-The very useful method is .on(): calling .on() on the database reference pointing to the .child('object'). EventType allows you to control the level of synchronization from the realtime databse. "value" is an EventType. In "value" EventType, the callback function will be invoked whenever the data at the ref is changed.
