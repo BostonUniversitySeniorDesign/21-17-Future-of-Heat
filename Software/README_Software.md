@@ -12,7 +12,7 @@ The web application is the user interface resonsible for the interaction between
 
 ## Installation
 
- We used [Google's Firbase](https://firebase.google.com)to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
+ We used [Google's Firbase](https://firebase.google.com) to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
 using the [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). The Firebase database is structured as a JSON tree with four main parents:
 
     * electric_homes
