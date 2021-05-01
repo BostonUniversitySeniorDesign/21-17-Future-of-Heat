@@ -17,7 +17,7 @@ The buildings were printed and then assembled on the dirham for testing. Once ci
 The purpose of the circuitry is to mimic the power consumption of real houses depending on the adoption rate of electric heating/vehicle (User Input).
 Thus, it is necessary for the circuit to be able to accept a signal and react to it by changing its load. To accomplish this, we eventually decided to
 use PhotoMOS Relays to control the flow of current in specific load branches. The specific relay model we used is (AQY210EH) from Panasonic Industry.
-Here is link to the data sheet [RelayDataSheet](/Resources/relay_datasheet.pdf).
+Here is link to the [Relay DataS heet](/Resources/relay_datasheet.pdf).
 
 The important information to get from it are the Min-Max forward current of the input signal (1.3 mA - 50mA), the input dropout voltage (1.25V), and the device schematic.
 ![RelaySchematic](/images/RelaySchematic.jpg)
