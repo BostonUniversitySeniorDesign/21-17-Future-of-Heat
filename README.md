@@ -1,6 +1,6 @@
 # Future Of Heat
 
-Welcome to *“The Future of Heat”* project, created by Team 17 of BU’s Senior Design class 2020-202.
+Welcome to *“The Future of Heat”* project, created by Team 17 of BU’s Senior Design class 2020-21.
 As global warming is becoming more severe, non-renewable energy sources such as natural gas and oil are falling out of favor.
 Using natural gas and oil to heat homes and businesses only continues to accelerate the warming of our planet.
 One of the promising alternatives is using electricity for heating and transportation. So we were tasked by National Grid to create an
