@@ -11,6 +11,11 @@ The foam had building foundations and roads cut out and then spackle was laid do
 The buildings were printed and then assembled on the dirham for testing. Once circuitry was complete the buildings were painted and the LED were set in place and the buildings were glued to their bases.
 
 ## Pictures of the System
+![DioramaTop View](/images/DioramaTopView.png)
+
+
+
+
 
 # Circuitry
 
