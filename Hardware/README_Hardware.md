@@ -23,7 +23,7 @@ The important information to get from it are the Min-Max forward current of the 
 ![RelaySchematic](/images/RelaySchematic.jpg)
 
 A single house load follows the following circuit schematic:
-![HouseLoadSchematic](/images/HouseLoadSchematic.jpg)
+![HouseLoadSchematic](/images/HouseLoadSchematic.JPG)
 
 When choosing the resistor values we took into account two major factors: One was the maximum voltage and current on the relay input. And the other was the relative power consumption of electric heating and electric vehicles.
 
