@@ -27,12 +27,13 @@ A single house load follows the following circuit schematic:
 
 When choosing the resistor values we took into account two major factors: One was the maximum voltage and current on the relay input. And the other was the relative power consumption of electric heating and electric vehicles.
 
-We built two “House Units” on one PCB board, so here is a picture of what we have (1_2).
+We built two “House Units” on one PCB board, so here is a picture of what we have
+![1_2](/images/HouseLoadBoard.jpg)
 
-As for the “Hotel Unit”, it follows this design which is slightly different than the house unit design because of the increase in current going through the electric heating branch.
+As for the “Hotel Unit”, it follows this design which is slightly different than the house unit design because of the increase in current going through the electric heating branch. Notice how the electric heating branch is now split into two to allow for two relays to bear the work.
+![HotelLoadSchematic](HotelLoadSchematic.JPG)
 
-Notice how the electric heating branch is now split into two to allow for two relays to bear the work. (HotelLoadSchematic).
-
-With this done, all that is needed to complete the load circuit is to connect all the houses and the hotel in series to use the same power source. This is pictured in the following schematic (WholeCircuitSchematic). 
+With this done, all that is needed to complete the load circuit is to connect all the houses and the hotel in series to use the same power source. This is pictured in the following schematic.
+![WholeCircuitSchematic](WholeCircuitSchematic.JPG) 
 
 # Arduino + Wiring
