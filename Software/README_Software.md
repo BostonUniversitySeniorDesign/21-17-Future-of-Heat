@@ -32,7 +32,7 @@ Some features for the charts aren't included in the main chartist.js file but we
 
 #### Dependencies
 The dependencies between the different files is shown in the flowchart below:
-
+![DependencyFlowchart](/images/DependencyFlowchart.jpeg)
 
 ### Back-End Development
 
