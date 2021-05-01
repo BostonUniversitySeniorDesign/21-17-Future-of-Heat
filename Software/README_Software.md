@@ -15,10 +15,10 @@ The web application is a single-page wesite that consists of four sections:
 We used [Google's Firbase](https://firebase.google.com) to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
 using the [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). The Firebase database is structured as a JSON tree with four main parents:
 
-    *   electric_homes
-    *   electric_vehicles
-    *   homes
-    *   weather
+*   electric_homes
+*   electric_vehicles
+*   homes
+*   weather
 
 Functions in index.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range from the 
 
