@@ -6,19 +6,19 @@ This documents the web application and Arduino codes used in the Future Of Heat 
 
 The web application is the user interface resonsible for the interaction between the user and the diorama.
 
-### Front-End Development
+## Front-End Development
+The web application is a single-page wesite that consists of four sections:
+    
 
-* CSS - Style
-
-## Installation
+## Back-End Development
 
 We used [Google's Firbase](https://firebase.google.com) to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
 using the [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). The Firebase database is structured as a JSON tree with four main parents:
 
-    * electric_homes
-    * electric_vehicles
-    * homes
-    * weather
+    *   electric_homes
+    *   electric_vehicles
+    *   homes
+    *   weather
 
 Functions in index.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range from the 
 
@@ -96,3 +96,5 @@ When 'Enter' button is pressed all values in the database are updated according 
 Essentially, the .ref() method gets you to the root of the database, and calling .child() creates a child key.
 
 More information on how to initialize and work with Firbase for a web application can be found in [Firbase Documentation](https://firebase.google.com/docs/web/setup)
+
+## Dependencies
