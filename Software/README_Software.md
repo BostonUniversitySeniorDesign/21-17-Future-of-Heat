@@ -19,14 +19,14 @@ The [Chartist.js](https://gionkunz.github.io/chartist-js/) charting library buil
 ###### Plugins
 Some features for the charts aren't included in the main chartist.js file but we used plugins that were avaiable to add features like:
 
-* Axis labels
+* [Axis labels](https://github.com/alexstanbury/chartist-plugin-axistitle)
     - This plugin allows the creation and placement of axis titles. The plugin will throw an error if it is applied to a chart that contains no axes, such as a Pie chart.
 
-    In order to use it, you will need to include the excellent charting library Chartist.js in your page.
+* [Tooltips at data points](https://github.com/tmmdata/chartist-plugin-tooltip)
+    - This plugin provides quick and easy tooltips for your chartist charts.
 
-http://gionkunz.github.io/chartist-js/index.html
-* Tooltips at data points
-* Coloring above/below a threshold
+* [Coloring above/below a threshold](https://github.com/gionkunz/chartist-plugin-threshold)
+    - This Chartist plugin can be used to divide your Line or Bar chart with a threshold. Everything above and below the threshold will be tagged with a special class, in order for your to apply different styling where appropriate.
 Also, [W3Schools](https://www.w3schools.com/html/) is a web deveolper information website that is referenced on this app. The site provides a reference maunal covering many aspects of the web application HTML, CSS, JavaScript programming.
 
 ## Back-End Development
