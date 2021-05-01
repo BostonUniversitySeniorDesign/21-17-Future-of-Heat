@@ -43,8 +43,8 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
 
 Functions in index.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range using the outside temperature selection.
 
-### Setup and configure Firebase
-1.  Create an account at (https://firebase.google.com/)
+### Setup and Configure Firebase
+1.  Create an account at https://firebase.google.com/
 
 2.  After setting up your new project, it will display all the initialization code you need to get started, for example :
 
