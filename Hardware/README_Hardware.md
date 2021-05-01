@@ -59,7 +59,7 @@ if there were to be a short circuit or a power surge in the primary.
 
 
 All wires are insulated with electrical tape and all electronics are mounted inside of the diorama away from user access to maximize safety and minimize the likelihood of electrical failure/injury. The transformer
-is fixed onto the inner side of the diorama and the load PCB boards are hot-glued onto the bottom paneling. The completed circuitry under the diorama: ![diorama_one](images/diorama_one.jpeg)
+is fixed onto the inner side of the diorama and the load PCB boards are hot-glued onto the bottom paneling. The completed circuitry under the diorama: ![diorama_one](/images/diorama_one.jpeg)
 
 
 
