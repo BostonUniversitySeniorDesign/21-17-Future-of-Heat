@@ -14,7 +14,18 @@ The web application is a single-page wesite that consists of four sections:
 * Output graphs
 * Trend charts
 
-The [Chartist.js](https://gionkunz.github.io/chartist-js/) charting library was used for the front-end chart generation because it provides responsive functions that enhance the user's experience.
+The [Chartist.js](https://gionkunz.github.io/chartist-js/) charting library built with SVG was used for the front-end chart generation because it provides responsive functions that enhance the user's experience.
+
+###### Plugins
+Some features for the charts aren't included in the main chartist.js file but we used plugins that were avaiable to add features like:
+
+* Axis labels
+    - This plugin allows the creation and placement of axis titles. The plugin will throw an error if it is applied to a chart that contains no axes, such as a Pie chart.
+
+    In order to use it, you will need to include the excellent charting library Chartist.js in your page.
+
+* Coloring above/below a threshold
+Also, [W3Schools](https://www.w3schools.com/html/) is a web deveolper information website that is referenced on this app. The site provides a reference maunal covering many aspects of the web application HTML, CSS, JavaScript programming.
 
 ## Back-End Development
 
@@ -26,7 +37,7 @@ using the [Firebase Realtime Database](https://firebase.google.com/products/real
 *   homes
 *   weather
 
-Functions in index.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range from the 
+Functions in index.js calculate the number of electric homes and electric vehicles using users percentage selection and the weather range using the outside temperature selection.
 
 ### Setup and configure Firebase
 1.  Create an account at (https://firebase.google.com/)
