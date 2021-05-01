@@ -2,11 +2,11 @@
 
 This documents the web application and Arduino codes used in the Future Of Heat Project.
 
-# Web Application
+## Web Application
 
 The web application is the user interface resonsible for the interaction between the user and the diorama.
 
-## Front-End Development
+### Front-End Development
 The web application is a single-page wesite that consists of four sections:
 
 * Home
@@ -30,8 +30,11 @@ Some features for the charts aren't included in the main chartist.js file but we
 * [Coloring above/below a threshold](https://github.com/gionkunz/chartist-plugin-threshold)
     - This Chartist plugin can be used to divide your Line or Bar chart with a threshold. Everything above and below the threshold will be tagged with a special class, in order for your to apply different styling where appropriate.
 
+#### Dependencies
+The dependencies between the different files is shown in the flowchart below:
 
-## Back-End Development
+
+### Back-End Development
 
 We used [Google's Firbase](https://firebase.google.com) to handle hosting and realtime database. The web applications stores the electric homes, electric vehicle and weather range
 using the [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). The Firebase database is structured as a JSON tree with four main parents:
@@ -118,4 +121,4 @@ Essentially, the .ref() method gets you to the root of the database, and calling
 
 More information on how to initialize and work with Firbase for a web application can be found in [Firbase Documentation](https://firebase.google.com/docs/web/setup)
 
-## Dependencies
+

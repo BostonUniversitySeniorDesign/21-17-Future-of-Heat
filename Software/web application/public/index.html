@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Future of Heat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.js">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    <link rel="stylesheet" href="./graph.css">
+    <link rel="stylesheet" href="http://gionkunz.github.io/chartist-js/index.html">
+    <!-- Custom CSS -->
+    <link href="chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <!-- Custom CSS -->
+    <link href="style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../../assets/vendor/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+    
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif
+        }
+        
+       
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+
+        .slidecontainer {
+            width: 100%; /* Width of the outside container */
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #000000;
+                cursor: pointer;
+            }
+
+        .ct-chart .campaign {
+            color: #71A28A;
+        }
+        .ct-series-b .ct-point {
+            stroke: black;
+            stroke-width: 30px;
+        }
+        .ct-area.ct-threshold-above {
+        fill: #056315;
+        }
+
+        .ct-area.ct-threshold-below {
+        fill: #ec0b0b;
+        }
+        .ct-axis-title {
+            font-size: 0.75em;
+        }
+        #map {
+            position: relative;
+        }
+
+        #overlay {
+            position: absolute;
+            background: #000;
+            color: #fff;
+            top: 20px;
+            left: 20px;
+        }
+        
+
+
+    </style>
+
+</head>
+<body class="w3-orange">
+
+    
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-grey w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#input" class="w3-bar-item w3-button" style="width:25% !important">INPUT</a>
+            <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+            <a href="#map" class="w3-bar-item w3-button" style="width:25% !important">MAP</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <p class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-8 w3-center w3-orange" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small">Future</span> Of Heat.</h1>
+            <p>A Physical Grid Model Teaching Tool.</p>
+            <img src="https://news.ufl.edu/media/newsufledu/images/2018/10/GettyImages-875327478.jpg" alt="boy" class="w3-image rounded" width="250" height="500">
+            <p class ="w3-padding-16">
+                <button id="startBtn"><i class="w3-button w3-light-grey w3-padding-large w3-section">Click to Start</i></button>
+            </p>
+        </header>
+    
+    <!-- input/Input Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-16" id="input">
+        <h2 class="w3-text-grey">Project Description</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p class = w3-text-dark-grey>
+            This Future of Heat project pertains to educating children and the general public on the now emerging push towards the electrification of home heating.
+            The conventional method for home heating, mainly utilizes furnaces, which burn fossil fuels, like natural gas, for heat. As the need to reduce carbon
+            emissions grows ever more imminent, certain cities internationally have taken steps towards banning fossil fuel based heating to usher in the transition
+            towards electrical heating. As such, it is important to understand the effects of this transition towards electrical heating.
+        </p>
+        <h2 class="w3-padding-14 w3-text-grey">User Input</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p class="w3-wide w3-text-dark-grey">Homes Using Electric Heat</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="100" value="10" step="5" class="slider" id="myHeat">
+
+        </div>
+
+
+        <p class="w3-wide w3-text-dark-grey">Coldest Outside Temperature</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="50" value="10" step="10" class="slider" id="myWeather">
+        </div>
+
+
+        <p class="w3-wide w3-text-dark-grey">Number of Electric Vehicles</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="100" value="10" step="5" class="slider" id="myVehicles">
+        </div>
+
+
+        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey rounded">
+            <div class="w3-third w3-section">
+                <p><span class="w3-xlarge" id="homes"></span>%</p><br>
+                Homes
+            </div>
+
+
+            <div class="w3-third w3-section">
+                <p><span class="w3-xlarge" id="weather"></span>F</p><br>
+                Temperature
+            </div>
+
+
+            <div class="w3-third w3-section">
+                <p><span class="w3-xlarge" id="vehicles"></span>%</p><br>
+                Electric Vehicles
+            </div>
+
+            <script>var rangeslider1 = document.getElementById("myHeat");
+                var output1 = document.getElementById("homes");
+
+                output1.innerHTML = rangeslider1.value;
+
+                rangeslider1.oninput = function () {
+                    output1.innerHTML = this.value;
+
+                }</script>
+
+            <script>var rangeslider2 = document.getElementById("myWeather");
+                var output2 = document.getElementById("weather");
+                output2.innerHTML = rangeslider2.value;
+                rangeslider2.oninput = function () {
+                    output2.innerHTML = this.value;
+                }</script>
+
+            <script>var rangeslider3 = document.getElementById("myVehicles");
+                var output3 = document.getElementById("vehicles");
+                output3.innerHTML = rangeslider3.value;
+
+                rangeslider3.oninput = function () {
+                    output3.innerHTML = this.value;
+                }</script>
+
+        </div>
+
+        <button id="enterBtn"><i class="w3-button w3-light-grey w3-padding-large w3-section">Enter</i></button></a>
+
+    </div>
+    <!-- End Input Section -->
+    <!-- Output Section -->
+    <div class="w3-padding-64 w3-content" id="output">
+        <h2 class="w3-padding-16 w3-text-grey ">OUTPUT</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p class= "w3-text-dark-grey">
+            We measure the usage using kilowatt hours (kWh). 
+            This is a measure of energy use over time. 
+            We then multiply the usage (kWh) by the supply rate to determine the supply charge.
+        </p>
+        <div id="answer"> </div>
+        
+        <!-- Graph for Output -->
+        <div class="main-content container">
+            <div class="row ">
+                <div class="col-xs-12">
+                    <div class="box-content w3-padding-12 w3-light-grey rounded" style="margin-right: 20px;">
+                        <h4 class="box-title w3-center w3-padding-24">CO<sub>2</sub> Emission </h4>
+                            <div class="row ">
+                                <!-- column -->
+                                <div class="col">
+                                    <div class="campaign w3-padding-8" id="barchart" style="height: 320px"></div>
+                                </div>
+                                <!-- column -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="box-content  w3-padding-12 w3-light-grey rounded">
+                        <h4 class="box-title w3-center w3-padding-24">COST</h4>
+                            <div class="row">
+                                <!-- column -->
+                                <div class="col">
+                                    <div class="campaign1 ct-chart" id="barchart1" style="height: 320px"></div>
+                                </div>
+                                <!-- column -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="box-content w3-padding-12 w3-light-grey rounded" style="margin-top: 20px;">
+                        <h4 class="box-title w3-center w3-padding-24">Load Profile</h4>
+                            <div class="row">
+                                <!-- column -->
+                                <div class="col">
+                                    <div class="campaign2 ct-chart" id="barchart2" style="height: 320px" ></div>
+                                </div>
+                                <!-- column -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Output Section -->
+    
+    <!-- Trend Section -->
+    <div class="w3-padding-64 w3-content" id="trend">
+        <h2 class="w3-padding-16 w3-text-grey">TRENDS</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <!-- Graph for Output -->
+        <div class="main-content container">
+            <div class="row small-spacing">
+                <div class="col-xs-12 w3-center" >
+                    <div class="box-content w3-padding-12 w3-center w3-light-grey rounded" >
+                        <h4 class="box-title w3-center w3-padding-24">ENERGY CONSUMPTION</h4>
+                            <div class="row">
+                                <!-- column -->
+                                <div class="col">
+                                    <div class="line1 " id="linecahrt1" style="height: 320px"></div>
+                                </div>
+                                <!-- column -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xs-offset-5">
+                    <div class="box-content w3-padding-16 w3-light-grey rounded" style="margin-right: 10px; margin-top: 20px;">
+                        <h4 class="box-title w3-center w3-padding-16">COST</h4>
+                            <div class="row">
+                                <!-- column -->
+                                <div class="col ">
+                                    <div class="line2 ct-chart" id="linecahrt1" style="height: 320px"></div>
+                                </div>
+                                <!-- column -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="box-content w3-padding-16 w3-light-grey rounded" style="margin-top: 20px;">
+                        <h4 class="box-title w3-center w3-padding-16">CO<sub>2</sub> Emission </h4>
+                            <div class="row">
+                                <!-- column -->
+                                <div class="col">
+                                    <div class="line3 ct-chart" id="linecahrt1" style="height: 320px"></div>
+                                </div>
+                                <!-- column -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Trend Section -->
+    <!-- Reference Section -->
+    <div class="w3-padding-64 w3-content" id="trend">
+        <h2 class="w3-padding-16 w3-text-grey">REFERENCES</h2>
+        <hr style="width:200px" class="w3-opacity">
+    </div>
+    <!-- Footer -->
+    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+        <p class="w3-medium">Designed by <a class="w3-hover-text-green">Team 17 - Future of Heat</a></p>
+        <!-- End footer -->
+    </footer>
+
+    <!-- END PAGE CONTENT -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="chartist.min.js"></script>
+    <script src="chartist-plugin-tooltip.min.js"></script>
+    <script src="chartist-plugin-threshold.min.js"></script>
+    <script src="chartist-plugin-targetline.min.js"></script>
+    <script src="chartist-plugin-axistitle.min.js"></script>
+    <script src="http://gionkunz.github.io/chartist-js/index.html"></script>
+    
+    <!-- <script src="dashboard1.js"></script> -->
+    <script src="waves.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+
+
+    <script>// Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCtjVPCkMEUtS4fd6zuc91DjEeeXi2ncL0",
+            authDomain: "test-future-of-heat.firebaseapp.com",
+            databaseURL: "https://test-future-of-heat-default-rtdb.firebaseio.com",
+            projectId: "test-future-of-heat",
+            storageBucket: "test-future-of-heat.appspot.com",
+            messagingSenderId: "1019447598625",
+            appId: "1:1019447598625:web:c3299f5ea4e0d20dd34d60",
+            measurementId: "G-9ZXX8F0T40"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();</script>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
