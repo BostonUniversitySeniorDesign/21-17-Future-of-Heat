@@ -18,7 +18,7 @@ The [Chartist.js](https://gionkunz.github.io/chartist-js/) charting library buil
 
 Also, [W3Schools](https://www.w3schools.com/html/) is a web deveolper information website that is referenced on this app. The site provides a reference maunal covering many aspects of the web application HTML, CSS, JavaScript programming.
 
-###### Plugins
+##### Plugins
 Some features for the charts aren't included in the main chartist.js file but we used plugins that were avaiable to add features like:
 
 * [Axis labels](https://github.com/alexstanbury/chartist-plugin-axistitle)
