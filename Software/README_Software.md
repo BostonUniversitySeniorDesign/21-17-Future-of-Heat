@@ -8,7 +8,13 @@ The web application is the user interface resonsible for the interaction between
 
 ## Front-End Development
 The web application is a single-page wesite that consists of four sections:
-    
+
+* Home
+* User Inputs
+* Output graphs
+* Trend charts
+
+The [Chartist.js](https://gionkunz.github.io/chartist-js/) charting library was used for the front-end chart generation because it provides responsive functions that enhance the user's experience.
 
 ## Back-End Development
 
