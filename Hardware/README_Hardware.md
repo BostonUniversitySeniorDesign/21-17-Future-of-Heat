@@ -21,7 +21,7 @@ is very compact/low-profile. Here is the link to the data [Relay Datasheet](/Res
 the input dropout voltage (1.25V), and the device schematic. ![RelaySchematic](/images/RelaySchematic.jpg)
 
 
-A single house load follows the following circuit schematic: ![HouseLoadSchematic](/images/HouseLoadSchematic.JPG)
+A single house load follows the following circuit schematic: ![HouseLoadSchematic](/images/HouseLoadSchematic.pdf)
 
 
 
@@ -33,7 +33,7 @@ We decided to build two “House Unit” on a single PCB board to save budget an
 
 The “Hotel Unit” follows a similar design to the “House Unit” but with a minor difference due to the large increase in current flowing
 through the electric heating branch, approaching the current threshold of the relay. Notice how the electric heating branch is now split into two,
-allowing for a safe and functional operation of the relay. ![HotelLoadSchematic](/images/HotelLoadSchematic.jpg).
+allowing for a safe and functional operation of the relay. ![HotelLoadSchematic](/images/HotelLoadSchematic.JPG).
 
 
 
