@@ -50,5 +50,5 @@ Regarding the demultiplexer wiring, this isn’t visible from the one module sch
 To supplement the fact that the schematic only presents the connections for one house module, there is attached below a table of the pinouts for the Adruino Mega, the demultiplexers, and the ESP8266. Specifically note that the only wiring between the ESP8266 and the Arduino Mega are their TX and RX connection pairs.
 
 As the Arduino Mega interfaces between the LED control, load control, and ESP8266 a lot of wiring is needed. In this projects’ specific case breadboards were used simply due to the fact that the team ran into time constraints and started on a PCB design too late in the semester. It is definitely preferable to use PCB correctly sized PCB cabling to get a neater more professional end product. Regardless a few images of the internal circuitry underneath the foam core diorama can be seen attached below. Apologies in advance for the poor visibility in some areas as the wires powering the LEDs need to be fed up through foam core.  
-![Internal2](/images/WholeCircuitSchematic.JPG)
-![Internal3](/images/WholeCircuitSchematic.JPG)
+![Internal2](/images/diorama_two.JPG) 
+![Internal3](/images/diorama_three.JPG)
