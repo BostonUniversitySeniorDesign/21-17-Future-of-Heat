@@ -121,15 +121,15 @@ Essentially, the .ref() method gets you to the root of the database, and calling
 
 More information on how to initialize and work with Firebase for a web application can be found in [Firebase Documentation](https://firebase.google.com/docs/web/setup)
 
-**ARDUINO+ESP8266 FEATHER HUZZAH:**
+## Arduino Mega and ESP8266 Feather Huzzah:
 
-    The Arduino Mega 2560 that was used for this project can be programmed using the Arduino IDE, which can be downloaded for free at [https://www.arduino.cc/en/guide/windows](https://www.arduino.cc/en/guide/windows).
+The Arduino Mega 2560 that was used for this project can be programmed using the Arduino IDE, which can be downloaded for free at [https://www.arduino.cc/en/guide/windows](https://www.arduino.cc/en/guide/windows).
 
-Additionally the ESP8266 Feather Huzzah that was used as the wifi module was also programmed using the Arduino IDE. Note that for uploading code a USB A to USB B cable is needed for the Arduino while a USB A to USB micro cable is needed for the ESP8266. The source code for the Arduino is at \_\_\_\_\_\_, while the source code for the ESP8226 is at \_\_\_\_\_\_\_\_. The Arduino version used for coding both the Arduino Mega and the ESP8266 was Arduino 1.8.13.
+Additionally the ESP8266 Feather Huzzah that was used as the wifi module was also programmed using the Arduino IDE. Note that for uploading code a USB A to USB B cable is needed for the Arduino while a USB A to USB micro cable is needed for the ESP8266. The source code for the Arduino is at FutureOfHeat\_arduino, while the source code for the ESP8226 is at FutureOfHeat\_ESP8266. The Arduino version used for coding both the Arduino Mega and the ESP8266 was Arduino 1.8.13.
 
-**ARDUINO**
+### Arduino Mega
 
-    The Arduino code consists of a main setup function and a  main loop function. All of the digital control pins are instantiated in the beginning prior to the setup function. The setup function then sets all of these listed control pins as output signals correspondingly. Regarding the dependencies of the functions only the loop function calls on other functions. This loop function calls the following functions:
+The Arduino code consists of a main setup function and a  main loop function. All of the digital control pins are instantiated in the beginning prior to the setup function. The setup function then sets all of these listed control pins as output signals correspondingly. Regarding the dependencies of the functions only the loop function calls on other functions. This loop function calls the following functions:
 
 recvWithStartEndMarkers();
 
@@ -146,14 +146,73 @@ The dependency of between these functions can be seen as follows: (ArduinoFuncti
 The overview of each function is as follows:
 
 **recvWithStartEndMarkers();**
+        
+    void recvWithStartEndMarkers() {
+    static boolean recvInProgress = false;
+    static byte ndx = 0;
+    char startMarker = '<';
+    char endMarker = '>';
+    char rc;
 
-This function saves any of the serially received characters within these brackets, \< \>;, to the character string receivedChars[numChars], where in this case numChars is 32. The \< and \> denotes start and end markers for when the input values begin and end. For this project specifically the serial information received is in the form \<#electric homes, weather severity, # electric vehicles\>. More specifically this character string is formatted, created, and transmitted by the ESP8266 wifi module to the Arudino for reading. Note that this function buffers serial inputs up to 32 characters in length, as a group of serial information is 7 characters long, including the commas and the brackets, a maximum of 4 inputs grouping can be buffered. This is more than sufficient as it is expected that a designated person will be moderating the diorama exhibit.
+    while (Serial.available() > 0 && newData == false) {
+        rc = Serial.read();
+
+        if (recvInProgress == true) {
+            if (rc != endMarker) {
+                receivedChars[ndx] = rc;
+                ndx++;
+                if (ndx >= numChars) {
+                    ndx = numChars - 1;
+                }
+            }
+            else {
+                receivedChars[ndx] = '\0'; // terminate the string
+                recvInProgress = false;
+                ndx = 0;
+                newData = true;
+            }
+        }
+
+        else if (rc == startMarker) {
+            recvInProgress = true;
+        }
+      }
+    }
+
+This function saves any of the serially received characters within these brackets, \< \>, to the character string receivedChars[numChars], where in this case numChars is 32. The \< and \> denotes start and end markers for when the input values begin and end. For this project specifically the serial information received is in the form \<#electric homes, weather severity, # electric vehicles\>. More specifically this character string is formatted, created, and transmitted by the ESP8266 wifi module to the Arudino for reading. Note that this function buffers serial inputs up to 32 characters in length, as a group of serial information is 7 characters long, including the commas and the brackets, a maximum of 4 inputs grouping can be buffered. This is more than sufficient as it is expected that a designated person will be moderating the diorama exhibit.
 
 **parseData();**
+
+    void parseData() {
+
+      // split the data into its parts
+    char * strtokIndx; // this is used by strtok() as an index
+    
+    strtokIndx = strtok(tempChars, ","); // this continues where the previous call left off
+    elechome = atoi(strtokIndx);     // convert this part to an integer
+
+    strtokIndx = strtok(NULL, ",");
+    weather = atoi(strtokIndx);     // convert this part to an integer
+
+    strtokIndx = strtok(NULL, ","); // this continues where the previous call left off
+    elecvehic = atoi(strtokIndx);     // convert this part to an integer
+
+    }
 
 This function takes the copied serial data in receivedChars and parses it using the commas between the #electric homes, weather severity, # electric vehicles. It converts these characters to integers and writes them to their respective variables of elechome, weather, and elecvehic respectively.
 
  **showParsedData();**
+ 
+    void showParsedData() {
+        Serial.print("User Inputs ");
+        Serial.println(messageFromPC);
+        Serial.print("Number of Electric Homes ");
+        Serial.println(elechome);
+        Serial.print("Weather Severity in Degrees (5 is coldest) ");
+        Serial.println(weather);
+        Serial.print("Number of Electric Vehicles ");
+        Serial.println(elecvehic);
+    }
 
 This function is used strictly for troubleshooting as it prints out the parsed data into the serial console. This function prints out the message received from the serial communication along with all of the values parseData() parsed through.
 
@@ -163,9 +222,76 @@ This function is in charge of controlling the electric vehicle loads. The elecve
 
 **heatingtime(int weather);**
 
+    void heatingtime (int weather)
+    {
+        int wait=0;
+        int brightness;
+        switch (weather) 
+        {
+        
+        case 1:
+          wait =8;
+          brightness =80;
+          break;
+        
+          
+        case 2:
+          wait=20;
+          brightness = 125;
+          break;
+        
+        case 3:
+          wait=30;
+          brightness = 155;
+          break;
+          
+        case 4:
+          wait=50;
+          brightness = 180;
+          break;
+        
+        case 5:
+          wait= 75;
+          brightness = 200;
+          break;
+          
+       default:
+          wait=8;
+          brightness = 80;
+          break;
+
+     }
+     
+      digitalWrite(heatingcontrolmod1,HIGH);
+      digitalWrite(heatingcontrolmod2,HIGH);
+      digitalWrite(heatingcontrolmod3,HIGH);
+      digitalWrite(heatingcontrolmod4,HIGH);
+      for(int i=brightness; i>0; i--)
+      {
+        analogWrite(pwm_mod1, i);             
+        analogWrite(pwm_mod2, i);
+        analogWrite(pwm_mod3, i);
+        analogWrite(pwm_mod4, i);
+        
+        delay(wait+200-i);    
+      }
+      for(int j=3; j<brightness; j++)
+      {
+        digitalWrite(heatingcontrolmod1,LOW);
+        digitalWrite(heatingcontrolmod2,LOW);
+        digitalWrite(heatingcontrolmod3,LOW);
+        digitalWrite(heatingcontrolmod4,LOW);
+        analogWrite(pwm_mod1, j);
+        analogWrite(pwm_mod2, j);
+        analogWrite(pwm_mod3, j);
+        analogWrite(pwm_mod4, j);
+        delay(wait+200-j);
+      }
+    }
+
 This function is in charge of controlling the Red and Blue dual LEDs (R/B LEDs) that are mounted within each of the diorama&#39;s houses. The weather input parsed from the serially transmitted characters is used in logic control to determine how long the LED transitions from blue to red as well as how intense the red and blue will be. Essentially this function controls the PWM for the signals powering the R/B LEDs in order to simulate houses heating up.
 
-**ESP8266 FEATHER HUZZAH:**
+### ESP8266 Feather Huzzah:
 
 The ESP8266 code also consists of a main setup function and a main loop function. In this code module no custom functions were called however a few libraries were used in order to implement specific functions. The ESP8266WiFi.h library was used as it allows for wifi connection through the use of its WiFi functions. Additionally FirebaseESP8266.h; was also used in order to utilize read functions, allowing the ESP8266 to read data from Google&#39;s Firebase Realtime Database. This library was downloaded as open source software from [ESP8266WiFi.h](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266WiFi/src/ESP8266WiFi.h). Lastly string library was called as it will be needed to read data from the web app and string concatenate the brackets, commas, and user inputs for #electric homes, weather severity, # electric vehicles prior to serial transmission to the Arduino.
 
