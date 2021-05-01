@@ -16,6 +16,8 @@ The web application is a single-page wesite that consists of four sections:
 
 The [Chartist.js](https://gionkunz.github.io/chartist-js/) charting library built with SVG was used for the front-end chart generation because it provides responsive functions that enhance the user's experience.
 
+Also, [W3Schools](https://www.w3schools.com/html/) is a web deveolper information website that is referenced on this app. The site provides a reference maunal covering many aspects of the web application HTML, CSS, JavaScript programming.
+
 ###### Plugins
 Some features for the charts aren't included in the main chartist.js file but we used plugins that were avaiable to add features like:
 
@@ -27,7 +29,7 @@ Some features for the charts aren't included in the main chartist.js file but we
 
 * [Coloring above/below a threshold](https://github.com/gionkunz/chartist-plugin-threshold)
     - This Chartist plugin can be used to divide your Line or Bar chart with a threshold. Everything above and below the threshold will be tagged with a special class, in order for your to apply different styling where appropriate.
-Also, [W3Schools](https://www.w3schools.com/html/) is a web deveolper information website that is referenced on this app. The site provides a reference maunal covering many aspects of the web application HTML, CSS, JavaScript programming.
+
 
 ## Back-End Development
 
