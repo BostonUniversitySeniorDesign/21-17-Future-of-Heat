@@ -24,6 +24,8 @@ Some features for the charts aren't included in the main chartist.js file but we
 
     In order to use it, you will need to include the excellent charting library Chartist.js in your page.
 
+http://gionkunz.github.io/chartist-js/index.html
+* Tooltips at data points
 * Coloring above/below a threshold
 Also, [W3Schools](https://www.w3schools.com/html/) is a web deveolper information website that is referenced on this app. The site provides a reference maunal covering many aspects of the web application HTML, CSS, JavaScript programming.
 
