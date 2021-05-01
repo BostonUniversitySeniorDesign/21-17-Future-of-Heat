@@ -14,26 +14,54 @@ The buildings were printed and then assembled on the dirham for testing. Once ci
 
 # Circuitry
 
-The purpose of the circuitry is to mimic the power consumption of real houses depending on the adoption rate of electric heating/vehicle (User Input).
-Thus, it is necessary for the circuit to be able to accept a signal and react to it by changing its load. To accomplish this, we eventually decided to
-use PhotoMOS Relays to control the flow of current in specific load branches. The specific relay model we used is (AQY210EH) from Panasonic Industry.
-Here is link to the [Relay Data Sheet](/Resources/relay_datasheet.pdf).
+The purpose of the circuitry is to mimic the power consumption of a typical home depending on the adoption rates of electric heating/vehicle (User Input). Thus, it is necessary for the circuit to be
+able to accept a signal and react to it by changing its load profile. To accomplish this, we decided to use PhotoMOS relays to control the flow of current in specific load branches. The relay model we
+used is (AQY210EH) from Panasonic Industry. We chose this specific relay because it allows current control in both directions (supports AC), can handle the power draws of the load branches with ease, and
+is very compact/low-profile. Here is the link to the data [Relay Datasheet](/Resources/relay_datasheet.pdf). The main important information to get from it are the minimum and maximum forward currents of the input signal (1.3mA - 50mA),
+the input dropout voltage (1.25V), and the device schematic. ![RelaySchematic](/images/RelaySchematic.jpg)
 
-The important information to get from it are the Min-Max forward current of the input signal (1.3 mA - 50mA), the input dropout voltage (1.25V), and the device schematic.
-![RelaySchematic](/images/RelaySchematic.jpg)
 
-A single house load follows the following circuit schematic:
-![HouseLoadSchematic](/images/HouseLoadSchematic.pdf)
+A single house load follows the following circuit schematic: ![HouseLoadSchematic](/images/HouseLoadSchematic.JPG)
 
-When choosing the resistor values we took into account two major factors: One was the maximum voltage and current on the relay input. And the other was the relative power consumption of electric heating and electric vehicles.
 
-We built two “House Units” on one PCB board, so here is a picture of what we have
-![1_2](/images/HouseLoadBoard.jpg)
 
-As for the “Hotel Unit”, it follows this design which is slightly different than the house unit design because of the increase in current going through the electric heating branch. Notice how the electric heating branch is now split into two to allow for two relays to bear the work.
-![HotelLoadSchematic](/images/HotelLoadSchematic.JPG)
+When choosing the resistor values, two major factors were taken into account: the maximum threshold voltage and current on
+the relay input as well as the relative power consumptions of electric heating and electric vehicle branches.
+We decided to build two “House Unit” on a single PCB board to save budget and space. ![House Load Board](/images/HouseLoadBoard.jpg)
 
-With this done, all that is needed to complete the load circuit is to connect all the houses and the hotel in series to use the same power source. This is pictured in the following schematic.
-![WholeCircuitSchematic](/images/WholeCircuitSchematic.JPG) 
+
+
+The “Hotel Unit” follows a similar design to the “House Unit” but with a minor difference due to the large increase in current flowing
+through the electric heating branch, approaching the current threshold of the relay. Notice how the electric heating branch is now split into two,
+allowing for a safe and functional operation of the relay. ![HotelLoadSchematic](/images/HotelLoadSchematic.jpg).
+
+
+
+Since we did not have the resistors necessary to construct the hotel load, we connected some 400 Ohm resistors in parallel to match the equivalent resistances of each branch. ![HotelPCB](/images/HotelPCB.jpg).
+
+
+
+With the house and hotel loads complete, all that remains to complete the power grid is to connect all of the loads in parallel with respect to one another, forming a grid system.
+This is pictured in the following schematic and in the diorama ![WholeCircuitSchematic](/images/WholeCircuitSchematic.JPG)
+
+
+![WholePCB](/images/WholePCB.jpg)
+
+
+
+The load circuitry is a major part, but no circuit is complete without a power source. This circuit draws power from a US standard wall socket (120V - 60Hz) and steps down the voltage using a transformer to ~14V.
+The transformer we used is a class 2 transformer from Triad Magnetics with the model number (TCT50-03E07K). Here is the [Transformer Data Sheet](/Resources/TransformerDataSheet.pdf).
+
+
+The transformer primary is soldered to a 3-prong power cable and the secondary to the circuit. The ground wire of the 3-prong power cable remains unconnected. To increase electrical safety, we added a 0.5A fuse
+to the transformer primary since it is connected to the hazardous wall outlet. Although  highly unlikely, the fuse ensures that the transformer does not cause damage to either itself or to the rest of the circuit
+if there were to be a short circuit or a power surge in the primary.
+
+
+All wires are insulated with electrical tape and all electronics are mounted inside of the diorama away from user access to maximize safety and minimize the likelihood of electrical failure/injury. The transformer
+is fixed onto the inner side of the diorama and the load PCB boards are hot-glued onto the bottom paneling. The completed circuitry under the diorama: ![diorama_one](images/diorama_one.jpeg)
+
+
+
 
 # Arduino + Wiring
