@@ -145,6 +145,10 @@ The dependency of between these functions can be seen as follows: (ArduinoFuncti
 
 The overview of each function is as follows:
 
+
+![PinoutTable](/images/ArduinoFunctions.JPG) 
+
+
 **recvWithStartEndMarkers();**
         
     void recvWithStartEndMarkers() {
