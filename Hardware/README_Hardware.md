@@ -31,9 +31,9 @@ We built two “House Units” on one PCB board, so here is a picture of what we
 ![1_2](/images/HouseLoadBoard.jpg)
 
 As for the “Hotel Unit”, it follows this design which is slightly different than the house unit design because of the increase in current going through the electric heating branch. Notice how the electric heating branch is now split into two to allow for two relays to bear the work.
-![HotelLoadSchematic](HotelLoadSchematic.JPG)
+![HotelLoadSchematic](/images/HotelLoadSchematic.JPG)
 
 With this done, all that is needed to complete the load circuit is to connect all the houses and the hotel in series to use the same power source. This is pictured in the following schematic.
-![WholeCircuitSchematic](WholeCircuitSchematic.JPG) 
+![WholeCircuitSchematic](/images/WholeCircuitSchematic.JPG) 
 
 # Arduino + Wiring
